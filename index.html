@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Conference ticket generator</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="pattern-lines"></div>
+  <div class="pattern-squiggly"></div>
+
+  <main class="container">
+    <img src="./assets/images/logo-full.svg" alt="Coding Conf" class="logo">
+    
+    <div class="content">
+      <header class="header">
+        <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+        <p>Secure your spot at next year's biggest coding conference.</p>
+      </header>
+
+      <form id="ticketForm" class="ticket-form">
+        <div class="form-group">
+          <label for="avatar">Upload Avatar</label>
+          <div class="upload-area" id="uploadArea" 
+               role="button" 
+               tabindex="0" 
+               aria-label="Upload avatar image"
+               aria-describedby="uploadHint">
+            <img src="./assets/images/icon-upload.svg" alt="" class="upload-icon">
+            <p>Drag and drop or click to upload</p>
+          </div>
+          <input type="file" id="avatar" 
+                 accept="image/png, image/jpeg" 
+                 hidden
+                 aria-required="true">
+          <small class="hint" id="uploadHint">
+            <img src="./assets/images/icon-info.svg" alt="" class="info-icon">
+            Upload your photo (JPG or PNG, max size: 500KB).
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required
+                 aria-required="true">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" 
+                 placeholder="example@email.com" 
+                 required
+                 aria-required="true">
+        </div>
+
+        <div class="form-group">
+          <label for="github">GitHub Username</label>
+          <div class="input-with-icon">
+            <img src="./assets/images/icon-github.svg" alt="" class="github-icon">
+            <input type="text" id="github" 
+                   placeholder="@yourusername" 
+                   required
+                   aria-required="true">
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <span class="btn-text">Generate My Ticket</span>
+          <span class="loading-text" hidden>Generating...</span>
+        </button>
+      </form>
+
+      <div id="ticketContainer" class="ticket-container" hidden>
+        <header class="ticket-header">
+          <img src="./assets/images/logo-full.svg" alt="Coding Conf" class="logo">
+          
+          <div class="ticket-title">
+            <h2>Congrats, <span class="ticket-name">Jonatan Kristof</span>!</h2>
+            <p>Your ticket is ready.</p>
+          </div>
+          
+          <p class="ticket-email">
+            We've emailed your ticket to 
+            <span class="email-address">jonatan@email.com</span> 
+            and will send updates in the run up to the event.
+          </p>
+        </header>
+
+        <div class="ticket-card">
+          <div class="ticket-logo">
+            <img src="./assets/images/logo-mark.svg" alt="">
+            <span>Coding Conf</span>
+          </div>
+          
+          <div class="ticket-date">Jan 31, 2025 / Austin, TX</div>
+          
+          <div class="ticket-attendee">
+            <img src="" alt="" class="attendee-avatar">
+            <div class="attendee-info">
+              <h3 class="attendee-name">Jonatan Kristof</h3>
+              <p class="attendee-github">@jonatankristof0101</p>
+            </div>
+          </div>
+          
+          <div class="ticket-number">#609104</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Bobyson Laishram</a>.
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
